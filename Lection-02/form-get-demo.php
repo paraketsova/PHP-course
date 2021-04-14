@@ -9,11 +9,7 @@
 </head>
 <body>
   <h2>Demo-2 - Gå till annan sida</h2>
-  <form action="form-get-demo-2.php" method="GET">
-  <!--   ставим решётку, чтобы это значение не было пустым. Another way  - use $_SERVER-->
-    <input type="text" name="firstname">
-    <input type="submit" value="Sök">
-  </form>
+
 <?php
   print_array($_GET);
   $firstname = $_GET['firstname'] ?? "Guest";

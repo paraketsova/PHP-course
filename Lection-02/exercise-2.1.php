@@ -1,3 +1,30 @@
+<!--
+  Övning 2
+• Skriv ett skript som beräknar porto för brev enligt följande:
+Max vikt i gram Antal frimärken
+50
+100
+250
+500
+1 000
+2 000
+Pris
+9,00
+18,00
+36,00
+54,00
+72,00
+90,00
+Antal frimärken
+1
+2
+4
+6
+8
+10
+34
+• Skicka vikt via ett formulär (använd en GET-Request)
+ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
