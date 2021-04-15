@@ -34,28 +34,37 @@ Antal frimärken
   <title>Document</title>
 </head>
 <body>
-  <form action="#" method="POST">
-
-  <label for="vikt">Vikt i gram: </label>
-  <input id="vikt" type="text" name="vikt" required> <br> <br>
-
-  <input type="submit" value="Skicka">
+  <form action="#" method="GET">
+      <label for="vikt">Vikt i gram:</label>
+      <input id="vikt" type="text" name="vikt">
+      <input type="submit" value="Skicka">
   </form>
-
-
   <?php
-    $vikt = $_POST['vikt'];
-    if ($vikt < 51) {
+    $vikt = $_GET['vikt'];
+    if ($vikt <= 50) {
       $frimarke = 1;
-    } else if (50 < $vikt && $vikt < 101) {
+    }
+    else if ($vikt > 50 && $vikt < 101) {
       $frimarke = 2;
     }
-
+    else if ($vikt > 100 && $vikt < 251) {
+      $frimarke = 4;
+    }
+    else if ($vikt > 250 && $vikt < 501) {
+      $frimarke = 6;
+    }
+    else if ($vikt > 500 && $vikt < 1001) {
+      $frimarke = 8;
+    }
+    else if ($vikt > 1000 && $vikt < 2001) {
+      $frimarke = 10;
+    }
+    else {
+        exit();
+    }
     $pris = 9 * $frimarke;
-    $svar = "Beräknar porto för brev är $pris kr och det motsvarar $frimarke frimarken";
-    echo "<pre>";
-    print_r($svar);
-    echo "</pre>";
+    $svar = "Beräknat porto för brev är $pris kr och det motsvarar $frimarke frimarken";
+    echo ($svar);
   ?>
 </body>
 </html>

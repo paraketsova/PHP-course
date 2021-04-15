@@ -14,10 +14,11 @@
 
   <?php
     $name = $_GET['name'] ?? "---";
-    echo "<h3>There is a name in URL: $name </h3>";
+    echo "<h3>There is a name in URL: $name .</h3>";
     getURL($_GET);
 
-    function getURL()
+/*
+    function getURL1()
     {
       $keyName = $_GET['name'];
       if (isset ($keyName)) {
@@ -26,6 +27,12 @@
         echo "<h3>There is not a name in URL";
       }
     }
+ */
+    function getURL($value) {
+      $input = $_GET[$value] ?? false;
+      $message = $input ? $input : "Please enter your $value";
+      return $message;
+  }
 
   ?>
 

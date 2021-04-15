@@ -7,7 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-<h2>
   <?php
     $age = $_GET['age'];
 
@@ -16,9 +15,7 @@
     } else {
       $greeting = "Välkommen till vår webshop";
     }
-    echo "<pre>";
-    print_r($greeting);
-    echo "</pre>";
+    echo ($greeting);
   ?>
 </body>
 </html>

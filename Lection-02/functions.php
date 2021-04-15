@@ -9,3 +9,9 @@ function print_array($array)
     print_r($array);
     echo "</pre>";
 }
+
+function getURL($value) {
+    $input = $_GET[$value] ?? false;
+    $message = $input ? $input : "Please enter your $value";
+    return $message;
+}

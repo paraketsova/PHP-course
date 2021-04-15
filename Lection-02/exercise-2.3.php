@@ -12,18 +12,33 @@
     <input type="submit" value="Count">
   </form>
   <?php
-    $number = $_GET['number'];
-    facultet($number);
+    $number = $_GET['number'] ?? null;;
+    getFactorial($number);
+    //getFactorial1($number);
 
 
-    function facultet($number)
+
+    function getFactorial($number)
     {
-      $sum = 0;
-      for ($i = 0; $i <= $number; $i++) {
-        $sum = $sum + $i;
+      if ($number <= 1) {
+        return 1;
       }
-      echo "<h3>$number ! = $sum</h3>";
+      return $number * getFactorial($number - 1);
     }
+    if ($number) {
+      echo getFactorial($number);
+    }
+
+ /*    function getFactorial1
+    {
+      $number = $_GET['number'] ?? 0;
+      $faculty = 1;
+      for ($i = 1; $i <= $number; $i++) {
+        $faculty *= $i;
+      }
+      $message = $number ? "<h1>Fakulteten av $number är $faculty</h1>" : false;
+      if ($message) echo $message;
+    } */
   ?>
 </body>
 </html>
