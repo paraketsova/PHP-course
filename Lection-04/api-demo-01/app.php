@@ -32,7 +32,7 @@ class App
       if (!$json)
         throw new Exception("Could not access ". self::$endpoint); //внутр конкатинация не работает с классовым синтаксисом
 
-      return json_decode($json, true);
+      return json_decode($json, true); // return array
     }
 
     /*****

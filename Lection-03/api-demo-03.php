@@ -11,6 +11,6 @@
 </head>
 <body class="container">
 <h1>Users</h1>
-  <?php App::main(); ?>
+  <?php App::main(); ?> //anrope main metoden
 </body>
 </html>
