@@ -5,15 +5,33 @@ class App
 
     /*****
      * En klassvaraibel = statisk variabel
+     * men inkapsling (Encapsulation)
      */
-    public static $endpoint = "https://jsonplaceholder.typicode.com/users";
+    private static $endpoint = "https://jsonplaceholder.typicode.com/users";
+
+    // Setters & getters
+    public static function setEndpoint($url){
+        if(filter_var($url, FILTER_VALIDATE_URL)){
+            self::$endpoint = $url;
+        }
+        else{
+            echo "<p class='alert alert-danger'>Error: $url is not a valid endpoint.</p>";
+        }
+    }
+    public static function getEndpoint(){
+        return self::$endpoint;
+    }
 
 
     /*****
      * The Main Method
      */
-    public static function main()
+    public static function main($url = false)
     {
+        if($url){
+            self::setEndpoint($url);
+        }
+
         try {
             $array = self::getData();
             self::viewData($array);
@@ -26,13 +44,13 @@ class App
     /*****
      * En klassmetod som hämtar data
      */
-  public static function getData()
+    public static function getData()
     {
-      $json =  @file_get_contents(self::$endpoint);// заменяем обычную переменную переменной класса
-      if (!$json)
-        throw new Exception("Could not access ". self::$endpoint); //внутр конкатинация не работает с классовым синтаксисом
+        $json =  @file_get_contents(self::$endpoint);
+        if (!$json)
+            throw new Exception("Could not access " . self::$endpoint);
 
-      return json_decode($json, true); // return array
+        return json_decode($json, true);
     }
 
     /*****

@@ -13,19 +13,9 @@
 </head>
 
 <body class="container">
-    <h1>Users</h1>
+    <h1>Dogs</h1>
 
     <?php
-
-
-    // App::$endpoint; // cannot access private property App::$endpoint
-
-    echo "<h2>Arbeta med setters & getters</h2>";
-    App::setEndpoint("TEST 1");
-    echo "<p class='alert alert-success'>" . App::getEndpoint() . "</p>";
-
-    echo "<h2>Skicka en endpoint som argument till main()</h2>";
-    App::main("TEST 2");
 
     echo "<h2>Från lektion 3</h2>";
     App::main();
