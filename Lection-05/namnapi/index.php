@@ -10,9 +10,9 @@
 
   //Steg 2 - Skapa en ny array
 
-  $firstNamesFemale = ["Åsa","Anna","Elisa","Annika","Mariia"];
-  $firstNamesMale = ["Mahmud","Bjorn","Oleg","Max","Edvard"];
-  $lastNames = ["Öberg","Paraketsova","Olsson","Pukka","Lee","Andersson","Carlsson","Friske","Madsson","Baru"];
+  $firstNamesFemale = ["Alice","Anna","Elisa","Annika","Mariia"];
+  $firstNamesMale = ["Mahmud","Leo","Oleg","Max","Edvard"];
+  $lastNames = ["Svensson","Paraketsova","Olsson","Pukka","Lee","Andersson","Carlsson","Friske","Madsson","Baru"];
   $gender = ["female", "male"];
 
   //Steg 3 - Skapa 10 namn och spara dess i en ny array
