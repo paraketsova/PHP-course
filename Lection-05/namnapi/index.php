@@ -10,9 +10,9 @@
 
   //Steg 2 - Skapa en ny array
 
-  $firstNamesFemale = ["Alice","Anna","Elisa","Annika","Mariia"];
-  $firstNamesMale = ["Mahmud","Leo","Oleg","Max","Edvard"];
-  $lastNames = ["Svensson","Paraketsova","Olsson","Pukka","Lee","Andersson","Carlsson","Friske","Madsson","Baru"];
+  $firstNamesFemale = ["Åsa","Anna","Elisa","Annika","Mariia"];
+  $firstNamesMale = ["Björn","Leo","Olle","Max","Edvard"];
+  $lastNames = ["Svensson","Lindberg","Olsson","Smith","Lee","Andersson","Carlsson","Friske","Madsson","Baru"];
   $gender = ["female", "male"];
 
   //Steg 3 - Skapa 10 namn och spara dess i en ny array
@@ -21,7 +21,7 @@
     $name = array(
         "firstname" => $firstNamesFemale[rand(0, 4)],
         "lastname" => $lastNames[rand(0, 9)],
-        "gender" => $genders[0],
+        "gender" => $gender[0],
         "age" => rand(0, 100),
         "email" => ''
     );
@@ -31,7 +31,7 @@
     $name = array(
         "firstname" => $firstNamesMale[rand(0, 4)],
         "lastname" => $lastNames[rand(0, 9)],
-        "gender" => $genders[1],
+        "gender" => $gender[1],
         "age" => rand(0, 100),
         "email" => ''
     );
@@ -45,7 +45,11 @@
     $lastEname = $name['lastname'];
     $genderE = $name['gender'];
     $ageE = $name['age'];
-    $email = strtolower(substr($name['firstname'], 0, 2) . substr($name['lastname'], 0, 3)) . "@example.com";
+    $swedishLetter = array("ö", "ä", "å", "Ö", "Ä", "Å");
+    $englishLetter = array("o", "a", "a", "O", "A", "A");
+    $firstEnameUpd = str_replace($swedishLetter, $englishLetter, $firstEname);
+    $lastEnameUpd = str_replace($swedishLetter, $englishLetter, $lastEname);
+    $email = strtolower(substr($firstEnameUpd, 0, 2) . substr($lastEnameUpd, 0, 3)) . "@example.com";
 
     $nameE = array(
       "firstname" => $firstEname,
