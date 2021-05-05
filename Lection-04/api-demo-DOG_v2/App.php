@@ -50,11 +50,11 @@ class App {
       $subBreed = $_GET['subbreed'] ?? null;
       if(isset($breed)){ //checks if there's a breed
         $endpoint = file_get_contents("https://dog.ceo/api/breed/$breed/images");
-      $altText = "Picture of $breed";
+        $altText = "Picture of $breed";
         if(isset($subBreed)){ //changes $endpoint if there's a sub breed
           $endpoint = file_get_contents("https://dog.ceo/api/breed/$breed/$subBreed/images");
           $altText .= " $subBreed";
-      }
+        }
         $imageArray = json_decode($endpoint, true)['message'];
         foreach($imageArray as $image){
           echo "<img src='$image' class='rounded' alt='$altText'>";
